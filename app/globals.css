@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button:hover,
+  button:focus,
+  button:active {
+    @apply cursor-pointer invert;
+  }
+  body {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .card_skeleton {
+    @apply rounded-[10px] border border-gray-200 *:m-5;
+  }
+  .card_title {
+    @apply text-lg font-[500] capitalize;
+  }
+  .card_footer {
+    @apply text-xs font-roboto capitalize;
+  }
+}
+
+@layer utilities {
+  .flex_between {
+    @apply flex justify-between items-center;
+  }
+}
