@@ -7,10 +7,10 @@ import { dummy_dates } from "@/config/mockdata";
 
 const Home = () => {
   return (
-    <main className="grid grid-rows-[auto_1fr] grid-cols-[auto_1fr] items-start gap-7 pr-7">
-      <Sidebar className="row-span-full" />
+    <main className="grid grid-rows-[auto_1fr] sm:grid-cols-[auto_1fr] items-start">
+      <Sidebar className="row-span-full absolute transition-all sm:sticky top-0" />
       <TopBar className="p-6" />
-      <section className="row-span-1 flex flex-wrap lg:flex-nowrap *:grow gap-7 ">
+      <section className="row-span-1 flex flex-wrap lg:flex-nowrap *:grow gap-7 px-7 my-7">
         <section className="space-y-4">
           <StatDisplay />
           <Announcements />

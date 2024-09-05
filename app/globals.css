@@ -29,4 +29,10 @@
   .flex_between {
     @apply flex justify-between items-center;
   }
+  .collapsed {
+    @apply -translate-x-[100%];
+  }
+  .shift_right {
+    @apply translate-x-[230%];
+  }
 }

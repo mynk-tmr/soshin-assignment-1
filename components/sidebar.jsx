@@ -24,7 +24,7 @@ const otherLinks = [
 
 const LinkSection = ({ title, links }) => {
   return (
-    <section className="hidden sm:block *:p-4">
+    <section className="*:p-4">
       <h3 className="uppercase text-xs font-medium">{title}</h3>
       <ul className="grid gap-y-4">
         {links.map((link) => (
@@ -43,7 +43,8 @@ const LinkSection = ({ title, links }) => {
 const Sidebar = ({ className }) => {
   return (
     <aside
-      className={`w-0 sm:w-auto sm:p-5 sm:border-r sm:h-full text-aside bg-[#fafafa] ${className}`}>
+      id="sidebar"
+      className={`p-5 border-r h-full text-aside bg-[#fafafa] ${className}`}>
       <div className="flex items-center">
         <Image
           src={logo_url}

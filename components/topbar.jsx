@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import ic_search from "@/assets/icons/ic_search.svg";
 import ic_bell from "@/assets/icons/ic_bell.svg";
 import ic_message from "@/assets/icons/ic_message.svg";
 import ic_arrow_down from "@/assets/icons/ic_arrow_down.svg";
 import ic_hamburger from "@/assets/icons/ic_hamburger.svg";
+import { useEffect } from "react";
 
 const SearchInput = () => {
   return (
@@ -44,15 +47,22 @@ const UserProfile = () => {
 };
 
 const TopBar = ({ className }) => {
+  const toggleSideBar = () => {
+    document.getElementById("sidebar").classList.toggle("collapsed");
+    document.getElementById("sidebar-toggle").classList.toggle("shift_right");
+  };
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 480px)");
+    if (mql.matches)
+      document.getElementById("sidebar").classList.add("collapsed");
+  }, []);
   return (
     <header className={`flex_between border-b gap-7 ${className}`}>
-      <button>
-        <Image
-          src={ic_hamburger}
-          alt="open menu"
-          width={24}
-          className="sm:hidden"
-        />
+      <button
+        id="sidebar-toggle"
+        className="sm:hidden z-10 transition-all"
+        onClick={toggleSideBar}>
+        <Image src={ic_hamburger} alt="open menu" width={24} />
       </button>
       <SearchInput />
       <section className="flex_between gap-7">
